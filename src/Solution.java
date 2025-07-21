@@ -8,6 +8,15 @@ public class Solution {
 
     }
 
+    //Tree BST
+    private static Integer find(Tree tree, int find) {
+        if (tree == null) return null;
+        int index = tree.value;
+        if (index == find) return index;
+        if (index < find) return find(tree.right, find);
+        return find(tree.left, find);
+    }
+
     //6.1 and 6.2
     private static Integer find(Queue<Node> nodes, String search) {
         Queue<Node> queue = new LinkedList<>(nodes);
